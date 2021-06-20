@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+</head>
+
+<body>
+    <div style ="text-align: center;">
+        <h1 style="color: white">Pokemon List:</h1>
+    </div>
+    <div class="">
+        <% pokemonList.forEach( pokemon => { %>
+            <div style="text-align: center;"><h4><%=pokemon.name.toUpperCase()%></h4></div>
+        <% }); %>
+    </div>
+    
+    <div style="text-align: center;">
+        <% if(page != 1) { %>
+            <a href="http://localhost:8080/pokemon/1"><button class="btn btn-secondary m-2">First</button></a>
+            <a href="http://localhost:8080/pokemon/<%=parseInt(page) - 1%>"><button class="btn btn-secondary m-2">Previous</button></a>
+        <% } %>
+        
+   
+        
+        <% if(page != 112) { %>
+            <a href="http://localhost:8080/pokemon/<%=parseInt(page) + 1%>"><button class="btn btn-secondary m-2">Next</button></a>
+            <a href="http://localhost:8080/pokemon/112"><button class="btn btn-secondary m-2">Last</button></a>
+        <% } %>
+    </div>
+</body>
+
+</html>
